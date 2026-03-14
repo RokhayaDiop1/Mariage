@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mansour & Arame</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@300;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="acceuil">
+
+<div class="overlay">
+
+<h2 class="arabic fade">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h2>
+
+<p class="verset fade">
+30 : 21 <br>
+Et parmi Ses signes Il a créé de vous, pour vous, des épouses
+pour que vous viviez en tranquillité avec elles <br>
+et Il a mis entre vous de l'affection et de la bonté.
+</p>
+
+<div class="separateur fade">
+    <span></span>
+</div>
+
+<p class="invite fade">
+VOUS ÊTES CORDIALEMENT INVITÉS AU MARIAGE DE
+</p>
+
+<h1 class="nom fade">Mansour</h1> 
+<h3 class="et fade">&</h3> 
+<h1 class="nom fade">Arame</h1>
+</div>
+
+</div>
+<section class="countdown-section fade">
+    <h2 class="countdown-title fade">Le grand jour approche !</h2>
+    <div class="countdown">
+
+        <div class="countdown-row">
+        <div class="time-box">
+            <span id="days">00</span>
+            <p>Jours</p>
+        </div>
+        <div class="time-box">
+            <span id="hours">00</span>
+            <p>Heures</p>
+        </div>
+        </div>
+
+        <div class="countdown-row">
+        <div class="time-box">
+            <span id="minutes">00</span>
+            <p>Minutes</p>
+        </div>
+        <div class="time-box">
+            <span id="seconds">00</span>
+            <p>Secondes</p>
+        </div>
+        </div>
+
+    </div>
+    </section>
+
+
+
+<section class="histoire-section fade">
+    <h2 class="histoire-title fade">Notre Histoire</h2>
+    <div class="histoire-box fade">
+        <p>
+        Depuis notre rencontre, chaque instant partagé a été un chapitre unique de notre histoire. 
+        Des premiers regards aux éclats de rire, des aventures aux moments de tendresse, 
+        notre chemin nous a guidés vers ce jour spécial où nous célébrons notre amour entourés de nos proches.
+        </p>
+    </div>
+</section>
+
+
+
+<section class="galerie-section fade">
+    <h2 class="galerie-title fade">Notre Galerie</h2>
+    <div class="galerie-box fade">
+        <div class="slider-container">
+            <div class="slider-track">
+                <img src="/images/WhatsApp Image 2026-03-13 at 17.37.27 (2).jpeg" alt="Photo 1">
+                <img src="/images/WhatsApp Image 2026-03-13 at 17.37.27.jpeg" alt="Photo 2">
+                <img src="/images/WhatsApp Image 2026-03-13 at 17.37.28.jpeg" alt="Photo 3">
+                <img src="/images/WhatsApp Image 2026-03-13 at 17.37.28.jpeg" alt="Photo 4">
+            </div>
+
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <script>
+    // Date du mariage (année, mois-1, jour, heure, minute, seconde)
+    const weddingDate = new Date("2026-03-29T15:17:00").getTime();
+
+    const countdown = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        if (distance < 0) {
+        clearInterval(countdown);
+        document.querySelector(".countdown").innerHTML = "<h2>C'est le grand jour ! 🎉</h2>";
+        return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days.toString().padStart(2, "0");
+        document.getElementById("hours").innerText = hours.toString().padStart(2, "0");
+        document.getElementById("minutes").innerText = minutes.toString().padStart(2, "0");
+        document.getElementById("seconds").innerText = seconds.toString().padStart(2, "0");
+    }, 1000);
+    </script>
+
+
+
+<script>
+const track = document.querySelector(".slider-track");
+const dots = document.querySelectorAll(".dot");
+let currentIndex = 0;
+const totalImages = track.children.length;
+
+function showSlide(index) {
+    const containerWidth = document.querySelector(".slider-container").offsetWidth;
+    track.style.transform = `translateX(-${index * containerWidth}px)`; // défilement exact
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[index].classList.add("active");
+}
+
+// Automatique
+let slideInterval = setInterval(() => {
+    currentIndex = (currentIndex + 1) % totalImages;
+    showSlide(currentIndex);
+}, 4000);
+
+// Navigation via points
+dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+        currentIndex = i;
+        showSlide(currentIndex);
+        clearInterval(slideInterval);
+        slideInterval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalImages;
+            showSlide(currentIndex);
+        }, 4000);
+    });
+});
+</script>
+    
+
+
+</body>
+</html>
