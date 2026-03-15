@@ -460,38 +460,184 @@ transform:translateY(0);
 }
 
 
-/* PETALS ANIMATION */
+/* SECTION GALERIE COMPLETE */
 
-.petals{
-position:fixed;
-top:0;
-left:0;
+.galerie-complete{
+
+padding:100px 20px;
+background:#ffffff;
+text-align:center;
+
+}
+
+.galerie-subtitle{
+
+letter-spacing:6px;
+font-size:14px;
+color:#f5d27a;
+margin-bottom:10px;
+
+}
+
+.galerie-title{
+
+font-size:3rem;
+color:#4b2e2e;
+margin-bottom:60px;
+
+}
+
+/* GRID GALERIE */
+
+.galerie-container{
+
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3, 1fr);
+gap:25px;
+
+}
+
+.galerie-container img{
+
 width:100%;
-height:100%;
-pointer-events:none;
-overflow:hidden;
-z-index:1;
-}
-
-.petals span{
-
-position:absolute;
-top:-50px;
-font-size:24px;
-animation:fall linear infinite;
+height:350px;
+object-fit:cover;
+border-radius:10px;
+transition:0.4s;
 
 }
 
-@keyframes fall{
+.galerie-container img:hover{
 
-0%{
-transform:translateY(-10px) rotate(0deg);
-opacity:1;
+transform:scale(1.05);
+
 }
 
-100%{
-transform:translateY(110vh) rotate(360deg);
-opacity:0.8;
+
+@media (max-width:900px){
+
+.galerie-container{
+
+grid-template-columns:repeat(2, 1fr);
+
 }
+
+}
+
+
+
+@media (max-width:600px){
+
+.galerie-container{
+
+grid-template-columns:1fr;
+
+}
+
+.galerie-container img{
+
+height:auto;
+
+}
+
+}
+
+
+/* LIVRE D'OR */
+
+.livre-or{
+
+padding:100px 20px;
+background:#fff8f0;
+text-align:center;
+
+}
+
+.livre-subtitle{
+
+letter-spacing:6px;
+font-size:14px;
+color:#f5d27a;
+
+}
+
+.livre-title{
+
+font-size:2.5rem;
+margin-bottom:40px;
+
+}
+
+.livre-container{
+
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+
+}
+
+.livre-container input,
+.livre-container textarea{
+
+padding:12px;
+border:1px solid #ddd;
+border-radius:8px;
+font-size:16px;
+
+}
+
+.livre-container textarea{
+
+height:120px;
+resize:none;
+
+}
+
+.livre-container button{
+
+padding:12px;
+border:none;
+background:#f5d27a;
+color:white;
+font-size:16px;
+border-radius:30px;
+cursor:pointer;
+
+}
+
+.messages{
+
+max-width:700px;
+margin:60px auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+
+}
+
+.message-card{
+
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+text-align:left;
+
+}
+
+.message-card h4{
+
+color:#333;
+margin-bottom:5px;
+
+}
+
+.message-card p{
+
+color:#666;
 
 }

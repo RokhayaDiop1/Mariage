@@ -14,8 +14,7 @@
 </head>
 
 <body>
-
-    <div class="petals"></div>
+    
 
 <div class="acceuil">
 
@@ -149,11 +148,51 @@ VOUS ÊTES CORDIALEMENT INVITÉS AU MARIAGE DE
 <p class="lieu">Devant chez elles KAHONE</p>
 <p class="detail">KAOLACK</p>
 
-<a href="https://maps.google.com" class="map-btn">Voir la localisation</a>
+<a href="google.com/maps?q=14.708807945251465,-17.44991111755371&z=17&hl=fr" class="map-btn">Voir la localisation</a>
 
 </div>
 
 </div>
+
+</section>
+
+
+
+<section class="galerie-complete">
+
+<p class="galerie-subtitle">NOS PHOTOS</p>
+<h2 class="galerie-title">Galerie Complète</h2>
+
+<div class="galerie-container">
+
+<img src="images/WhatsApp Image 2026-03-13 at 17.37.27 (1).jpeg" alt="">
+<img src="images/WhatsApp Image 2026-03-13 at 17.37.27 (2).jpeg" alt="">
+<img src="images/WhatsApp Image 2026-03-13 at 17.37.27.jpeg" alt="">
+<img src="images/WhatsApp Image 2026-03-13 at 17.37.28.jpeg" alt="">
+
+</div>
+
+</section>
+
+
+
+<section class="livre-or">
+
+<p class="livre-subtitle">LAISSEZ UN MESSAGE</p>
+<h2 class="livre-title">Un Petit Mot Pour Nous</h2>
+
+<div class="livre-container">
+
+<input type="text" id="nom" placeholder="Nom">
+<input type="text" id="prenom" placeholder="Prénom">
+
+<textarea id="message" placeholder="Votre message..."></textarea>
+
+<button onclick="ajouterMessage()">Envoyer</button>
+
+</div>
+
+<div class="messages" id="messages"></div>
 
 </section>
 
@@ -251,29 +290,53 @@ element.classList.add("active");
 
 <script>
 
-const petalsContainer = document.querySelector(".petals");
+function ajouterMessage(){
 
-function createPetal(){
+let nom = document.getElementById("nom").value;
+let prenom = document.getElementById("prenom").value;
+let message = document.getElementById("message").value;
 
-const petal = document.createElement("span");
+if(nom === "" || prenom === "" || message === ""){
+alert("Veuillez remplir tous les champs");
+return;
+}
 
-petal.innerHTML = "✨";
+let messages = JSON.parse(localStorage.getItem("livreor")) || [];
 
-petal.style.left = Math.random() * window.innerWidth + "px";
+messages.push({nom, prenom, message});
 
-petal.style.animationDuration = (5 + Math.random()*5) + "s";
+localStorage.setItem("livreor", JSON.stringify(messages));
 
-petal.style.fontSize = (20 + Math.random()*20) + "px";
+afficherMessages();
 
-petalsContainer.appendChild(petal);
-
-setTimeout(()=>{
-petal.remove();
-},10000);
+document.getElementById("nom").value="";
+document.getElementById("prenom").value="";
+document.getElementById("message").value="";
 
 }
 
-setInterval(createPetal, 400);
+function afficherMessages(){
+
+let messages = JSON.parse(localStorage.getItem("livreor")) || [];
+
+let container = document.getElementById("messages");
+
+container.innerHTML="";
+
+messages.reverse().forEach(msg => {
+
+container.innerHTML += `
+<div class="message-card">
+<h4>${msg.prenom} ${msg.nom}</h4>
+<p>${msg.message}</p>
+</div>
+`;
+
+});
+
+}
+
+afficherMessages();
 
 </script>
 
