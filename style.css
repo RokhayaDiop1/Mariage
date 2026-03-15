@@ -578,10 +578,55 @@ margin-bottom:20px;
 }
 
 .citation-auteur{
-
-font-size:1rem;
+font-size:1.5rem;
 color:#f5d27a;
 letter-spacing:2px;
 text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+font-weight: bold;
+
+}
+
+
+/* FOOTER */
+
+.footer{
+
+background:#1a1a1a;
+color:white;
+padding:60px 20px;
+text-align:center;
+
+}
+
+.footer-noms{
+
+font-family:'Great Vibes', cursive;
+font-size:50px;
+color:#f5d27a;
+margin-bottom:10px;
+
+}
+
+.footer-texte{
+
+font-size:16px;
+opacity:0.9;
+
+}
+
+.footer-separateur{
+
+width:60px;
+height:2px;
+background:#f5d27a;
+margin:25px auto;
+
+}
+
+.footer-date{
+
+letter-spacing:2px;
+font-size:14px;
+color:#f5d27a;
 
 }
