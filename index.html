@@ -176,25 +176,23 @@ VOUS ÊTES CORDIALEMENT INVITÉS AU MARIAGE DE
 
 
 
-<section class="livre-or">
+<section class="citation-section">
 
-<p class="livre-subtitle">LAISSEZ UN MESSAGE</p>
-<h2 class="livre-title">Un Petit Mot Pour Nous</h2>
+<div class="citation-box">
 
-<div class="livre-container">
+<p class="citation-texte">
+"L'amour n'est pas seulement un sentiment,
+c'est une promesse de marcher ensemble,
+main dans la main, pour toute une vie."
+</p>
 
-<input type="text" id="nom" placeholder="Nom">
-<input type="text" id="prenom" placeholder="Prénom">
-
-<textarea id="message" placeholder="Votre message..."></textarea>
-
-<button onclick="ajouterMessage()">Envoyer</button>
+<span class="citation-auteur">— Mansour & Arame</span>
 
 </div>
 
-<div class="messages" id="messages"></div>
-
 </section>
+
+
 
 
     <script>
@@ -288,57 +286,7 @@ element.classList.add("active");
 
 
 
-<script>
 
-function ajouterMessage(){
-
-let nom = document.getElementById("nom").value;
-let prenom = document.getElementById("prenom").value;
-let message = document.getElementById("message").value;
-
-if(nom === "" || prenom === "" || message === ""){
-alert("Veuillez remplir tous les champs");
-return;
-}
-
-let messages = JSON.parse(localStorage.getItem("livreor")) || [];
-
-messages.push({nom, prenom, message});
-
-localStorage.setItem("livreor", JSON.stringify(messages));
-
-afficherMessages();
-
-document.getElementById("nom").value="";
-document.getElementById("prenom").value="";
-document.getElementById("message").value="";
-
-}
-
-function afficherMessages(){
-
-let messages = JSON.parse(localStorage.getItem("livreor")) || [];
-
-let container = document.getElementById("messages");
-
-container.innerHTML="";
-
-messages.reverse().forEach(msg => {
-
-container.innerHTML += `
-<div class="message-card">
-<h4>${msg.prenom} ${msg.nom}</h4>
-<p>${msg.message}</p>
-</div>
-`;
-
-});
-
-}
-
-afficherMessages();
-
-</script>
 
 </body>
 </html>

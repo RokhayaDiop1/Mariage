@@ -545,99 +545,42 @@ height:auto;
 }
 
 
-/* LIVRE D'OR */
+/* SECTION CITATION */
 
-.livre-or{
+.citation-section{
 
 padding:100px 20px;
 background:#fff8f0;
-text-align:center;
-
-}
-
-.livre-subtitle{
-
-letter-spacing:6px;
-font-size:14px;
-color:#f5d27a;
-
-}
-
-.livre-title{
-
-font-size:2.5rem;
-margin-bottom:40px;
-
-}
-
-.livre-container{
-
-max-width:500px;
-margin:auto;
 display:flex;
-flex-direction:column;
-gap:15px;
+justify-content:center;
+align-items:center;
 
 }
 
-.livre-container input,
-.livre-container textarea{
-
-padding:12px;
-border:1px solid #ddd;
-border-radius:8px;
-font-size:16px;
-
-}
-
-.livre-container textarea{
-
-height:120px;
-resize:none;
-
-}
-
-.livre-container button{
-
-padding:12px;
-border:none;
-background:#f5d27a;
-color:white;
-font-size:16px;
-border-radius:30px;
-cursor:pointer;
-
-}
-
-.messages{
+.citation-box{
 
 max-width:700px;
-margin:60px auto;
-display:flex;
-flex-direction:column;
-gap:20px;
+padding:40px;
+text-align:center;
+border-top:2px solid #f5d27a;
+border-bottom:2px solid #f5d27a;
 
 }
 
-.message-card{
+.citation-texte{
 
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-text-align:left;
-
-}
-
-.message-card h4{
-
+font-size:1.8rem;
+font-style:italic;
 color:#333;
-margin-bottom:5px;
+line-height:1.6;
+margin-bottom:20px;
 
 }
 
-.message-card p{
+.citation-auteur{
 
-color:#666;
+font-size:1rem;
+color:#f5d27a;
+letter-spacing:2px;
 
 }
