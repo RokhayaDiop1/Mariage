@@ -122,7 +122,51 @@ font-size:30px;
 margin:10px;
 }
 
-.fade{
+
+.nom2{
+font-family:'Great Vibes', cursive;
+font-size:50px;
+color:#f5d27a;
+margin:5px 0;   /* réduit l'espace */
+}
+
+.et2{
+font-size:30px;
+margin:0;
+}
+
+
+.btn-invitation{
+margin-top:30px;
+padding:12px 25px;
+background:transparent;
+border: 1px solid #f5d27a ;
+color:rgb(255, 255, 255);
+text-decoration:none;
+font-size:18px;
+border-radius:25px;
+transition:0.3s;
+}
+
+.btn-invitation:hover{
+background:#464545;;
+color:#f5d27a;
+}
+
+
+.overlay2{
+background:rgba(0,0,0,0.4);
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:85px;
+justify-content: flex-start;
+padding-top: 80px;
+}
+
+.fade2{
 opacity:0;
 transform:translateY(40px);
 animation:apparition 2s ease forwards;
@@ -730,7 +774,7 @@ font-weight: bold;
 
 .footer{
 
-background:#1a1a1a;
+background:#2c2c2c;
 color:white;
 padding:60px 20px;
 text-align:center;
