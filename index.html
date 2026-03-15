@@ -87,7 +87,8 @@ VOUS ÊTES CORDIALEMENT INVITÉS AU MARIAGE DE
 
 
 <section class="galerie-section fade">
-    <h2 class="galerie-title fade">Notre Galerie</h2>
+    <p>NOS MOMENTS</p>
+    <h2 class="galerie-title fade">Galerie Photo</h2>
     <div class="galerie-box fade">
         <div class="slider-container">
             <div class="slider-track">
@@ -105,6 +106,53 @@ VOUS ÊTES CORDIALEMENT INVITÉS AU MARIAGE DE
             </div>
         </div>
     </div>
+</section>
+
+<section class="info-section">
+
+<h2 class="info-subtitle">INFORMATIONS PRATIQUES</h2>
+<h1 class="info-title">Les Détails du Grand Jour</h1>
+
+<div class="info-container">
+
+<div class="info-card reveal">
+<div class="icon">🕌</div>
+
+<h3>CÉRÉMONIE RELIGIEUSE</h3>
+
+<p class="lieu">Mosquée KAHONE</p>
+<p class="detail">KAHONE</p>
+<p class="detail">17h00</p>
+
+</div>
+
+
+<div class="info-card reveal">
+<div class="icon">📅</div>
+
+<h3>DATE</h3>
+
+<p class="lieu">Samedi 29 Mars 2026</p>
+<p class="detail">29 Ramadan 1447 H</p>
+
+</div>
+
+
+<div class="info-card reveal">
+
+<div class="icon">🎉</div>
+
+<h3>RÉCEPTION</h3>
+
+<p class="lieu">Devant chez elles KAHONE</p>
+<p class="detail">KAOLACK</p>
+
+<a href="https://maps.google.com" class="map-btn">Voir la localisation</a>
+
+</div>
+
+</div>
+
 </section>
 
 
@@ -170,6 +218,32 @@ dots.forEach((dot, i) => {
 </script>
     
 
+
+<script>
+
+window.addEventListener("scroll", function(){
+
+let reveals = document.querySelectorAll(".reveal");
+
+reveals.forEach(function(element){
+
+let windowHeight = window.innerHeight;
+
+let elementTop = element.getBoundingClientRect().top;
+
+let visible = 100;
+
+if(elementTop < windowHeight - visible){
+
+element.classList.add("active");
+
+}
+
+});
+
+});
+
+</script>
 
 </body>
 </html>

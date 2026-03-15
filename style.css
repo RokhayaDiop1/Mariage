@@ -239,9 +239,15 @@ transform:translateY(0);
     position: relative;
 }
 
+
 .galerie-title {
     font-size: 2.8rem;
     margin-bottom: 40px;
+    color: #313030;
+    font-weight: 500;
+}
+.galerie-section p {
+    margin-bottom: 20px;
     color: #313030;
     font-weight: 500;
 }
@@ -313,4 +319,141 @@ transform:translateY(0);
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+
+
+/* SECTION INFORMATIONS */
+
+.info-section{
+
+padding:100px 20px;
+background:#fff8f0;
+text-align:center;
+
+}
+
+.info-subtitle{
+
+letter-spacing:6px;
+color:#f5d27a;
+font-size:14px;
+margin-bottom:10px;
+
+}
+
+.info-title{
+
+font-family:'Playfair Display', serif;
+font-size:3rem;
+margin-bottom:70px;
+color:#333;
+
+}
+
+.info-container{
+
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+
+}
+
+.info-card{
+
+width:300px;
+padding:50px 30px;
+border:2px solid #f5d27a;
+border-radius:15px;
+background:transparent;
+box-shadow:0 10px 25px rgba(0,0,0,0.8);
+transition:0.4s;
+
+}
+
+.info-card:hover{
+
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+
+}
+
+.icon{
+
+font-size:40px;
+margin-bottom:20px;
+
+}
+
+.info-card h3{
+
+letter-spacing:4px;
+color:#f5d27a;
+font-size:11px;
+margin-bottom:15px;
+text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+
+}
+
+.info-card p{
+
+letter-spacing:4px;
+color:#3b3b3b;
+font-size:16px;
+margin-bottom:15px;
+
+}
+
+.lieu{
+
+font-size:24px;
+font-family:'Playfair Display', serif;
+margin-bottom:10px;
+
+}
+
+.detail{
+
+color:#777;
+margin-bottom:5px;
+
+}
+
+/* bouton map */
+
+.map-btn{
+
+display:inline-block;
+margin-top:20px;
+padding:10px 20px;
+border:2px solid #f5d27a;
+border-radius:30px;
+text-decoration:none;
+color:#333;
+transition:0.3s;
+
+}
+
+.map-btn:hover{
+
+background:#f5d27a;
+color:white;
+
+}
+
+
+.reveal{
+
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+
+}
+
+.reveal.active{
+
+opacity:1;
+transform:translateY(0);
+
 }
