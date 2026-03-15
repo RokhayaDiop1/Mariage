@@ -6,13 +6,38 @@ body {
 
 }
 
+
+@media (max-width:480px){
+
+.arabic{
+font-size:26px;
+}
+
+.invite{
+font-size:12px;
+letter-spacing:2px;
+}
+
+.et{
+font-size:22px;
+}
+
+.galerie-title,
+.countdown-title,
+.histoire-title{
+font-size:2rem;
+}
+
+}
+
 .acceuil{
     background-image: url("/images/WhatsApp\ Image\ 2026-03-13\ at\ 17.37.27\ \(1\).jpeg");
     background-size:cover;
     background-position:center;
-    height: 200vh;
+    min-height: 100vh;
     position:relative;
     justify-content: flex-start;
+    
     
 
 }
@@ -41,9 +66,13 @@ margin-bottom:20px;
 .verset{
 max-width:600px;
 line-height:1.6;
-font-size:16px;
+font-size:clamp(14px,3vw,18px);
+padding:0 15px;
 opacity:0.9;
 }
+
+
+
 
 /* LIGNE */
 
