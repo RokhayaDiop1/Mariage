@@ -21,11 +21,27 @@ VOUS ÊTES CORDIALEMENT INVITÉS AU MARIAGE DE
 <h3 class="et2 fade">&</h3> 
 <h1 class="nom2 fade">Arame</h1>
 
-<a href="/acceuil.html" class="btn-invitation fade">
+<button onclick="ouvrirInvitation()" class="btn-invitation fade ">
 Cliquer pour ouvrir l'invitation
-</a>
+</button>
 </div>
 
+
+
+<audio id="musique" loop>
+    <source src="/audio/Amflo_Validé.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function ouvrirInvitation() {
+    const audio = document.getElementById("musique");
+    audio.play();
+
+    setTimeout(function(){
+        window.location.href = "invitation.html";
+    }, 500);
+}
+</script>
 
 
 </body>
