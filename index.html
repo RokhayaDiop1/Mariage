@@ -15,6 +15,8 @@
 
 <body>
 
+    <div class="petals"></div>
+
 <div class="acceuil">
 
 <div class="overlay">
@@ -242,6 +244,36 @@ element.classList.add("active");
 });
 
 });
+
+</script>
+
+
+
+<script>
+
+const petalsContainer = document.querySelector(".petals");
+
+function createPetal(){
+
+const petal = document.createElement("span");
+
+petal.innerHTML = "✨";
+
+petal.style.left = Math.random() * window.innerWidth + "px";
+
+petal.style.animationDuration = (5 + Math.random()*5) + "s";
+
+petal.style.fontSize = (20 + Math.random()*20) + "px";
+
+petalsContainer.appendChild(petal);
+
+setTimeout(()=>{
+petal.remove();
+},10000);
+
+}
+
+setInterval(createPetal, 400);
 
 </script>
 
