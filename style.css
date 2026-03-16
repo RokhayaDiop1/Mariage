@@ -7,6 +7,7 @@ body {
 }
 
 
+
 @media (max-width:480px){
 
 .arabic{
@@ -137,22 +138,44 @@ margin:0;
 }
 
 
-.btn-invitation{
-margin-top:30px;
-padding:12px 25px;
-background:transparent;
-border: 1px solid #f5d27a ;
-color:rgb(255, 255, 255);
-text-decoration:none;
-font-size:18px;
-border-radius:25px;
-transition:0.3s;
-}
+    .btn-invitation {
+    display: inline-block;  /* IMPORTANT pour que transform fonctionne */
+    margin-top: 30px;
+    padding: 12px 25px;
+    background: transparent;
+    border: 1px solid #f5d27a;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    
+    /* ANIMATION BOUNCE */
+    animation: bounce 1s infinite;
+    }
 
-.btn-invitation:hover{
-background:#464545;;
-color:#f5d27a;
-}
+    .btn-invitation:hover {
+    background: #464545;
+    color: #f5d27a;
+    border-color: #f5d27a;
+    }
+
+    /* Animation bounce */
+    @keyframes bounce {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    25% {
+        transform: translateY(-5px) scale(1.05);
+    }
+    50% {
+        transform: translateY(0) scale(1.1);
+    }
+    75% {
+        transform: translateY(-5px) scale(1.05);
+    }
+    }
 
 
 .overlay2{
@@ -166,6 +189,8 @@ padding:85px;
 justify-content: flex-start;
 padding-top: 90px;
 }
+
+
 
 .fade2{
 opacity:0;
@@ -186,6 +211,9 @@ transform:translateY(0);
 }
 
 }
+
+
+
 
 .countdown-section {
     text-align: center;
@@ -213,6 +241,15 @@ transform:translateY(0);
     display: flex;
     gap: 25px;
     justify-content: center;
+}
+
+
+.countdown span{
+transition:0.3s;
+}
+
+.countdown span.animate{
+transform:scale(1.2);
 }
 
 .time-box {
@@ -246,19 +283,50 @@ transform:translateY(0);
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
-/* Fade effect */
-.fade {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
-    animation-delay: 0.3s;
+
+/* Animation cascade pour countdown */
+
+.time-box{
+opacity:0;
+transform:translateY(40px);
+animation:fadeBox 1s forwards;
 }
 
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.time-box:nth-child(1){
+animation-delay:0.2s;
+}
+
+.time-box:nth-child(2){
+animation-delay:0.4s;
+}
+
+.time-box:nth-child(3){
+animation-delay:0.6s;
+}
+
+.time-box:nth-child(4){
+animation-delay:0.8s;
+}
+
+@keyframes fadeBox{
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* Fade effect */
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:all 1s ease;
+}
+
+.fade.active{
+opacity:1;
+transform:translateY(0);
 }
    /* ======= Section Notre Histoire ======= */
 .histoire-section {
@@ -293,18 +361,19 @@ transform:translateY(0);
 }
 
 /* Fade-in effect pour la section */
-.fade {
+.fade-light {
     opacity: 0;
-    transform: translateY(40px);
-    animation: fadeInUp 1s forwards;
+    transform: translateY(20px);
+    transition: all 1s ease-out; /* animation douce */
 }
 
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.fade-light.active {
+    opacity: 1;
+    transform: translateY(0);
 }
+
+.fade-light:nth-child(1) { transition-delay: 0.2s; }
+.fade-light:nth-child(2) { transition-delay: 0.4s; }
 
 
 .galerie-section {
@@ -697,6 +766,18 @@ transition:0.4s;
 
 transform:scale(1.05);
 
+}
+
+
+.fade-light{
+opacity:0;
+transform:translateY(40px);
+transition:all 1s ease;
+}
+
+.fade-light.active{
+opacity:1;
+transform:translateY(0);
 }
 
 

@@ -43,9 +43,10 @@
         <h3 class="et2 fade">&</h3> 
         <h1 class="nom2 fade">Arame</h1>
 
-        <button onclick="ouvrirInvitation()" class="btn-invitation fade">
-        Cliquer pour ouvrir l'invitation
+        <button onclick="ouvrirInvitation()" class="btn-invitation">
+            Cliquer pour ouvrir l'invitation
         </button>
+
 
     </div>
 </div>
@@ -80,40 +81,49 @@ VOUS ÊTES CORDIALEMENT INVITÉS AU MARIAGE DE
 </div>
 
 </div>
+
+
 <section class="countdown-section fade">
-    <h2 class="countdown-title fade">Le grand jour approche !</h2>
-    <div class="countdown">
+<h2 class="countdown-title fade">Le grand jour approche !</h2>
 
-        <div class="countdown-row">
-        <div class="time-box">
-            <span id="days">00</span>
-            <p>Jours</p>
-        </div>
-        <div class="time-box">
-            <span id="hours">00</span>
-            <p>Heures</p>
-        </div>
-        </div>
+<div class="countdown fade">
 
-        <div class="countdown-row">
-        <div class="time-box">
-            <span id="minutes">00</span>
-            <p>Minutes</p>
-        </div>
-        <div class="time-box">
-            <span id="seconds">00</span>
-            <p>Secondes</p>
-        </div>
-        </div>
+<div class="countdown-row">
 
-    </div>
-    </section>
+<div class="time-box fade">
+<span id="days">00</span>
+<p>Jours</p>
+</div>
+
+<div class="time-box fade">
+<span id="hours">00</span>
+<p>Heures</p>
+</div>
+
+</div>
+
+<div class="countdown-row">
+
+<div class="time-box fade">
+<span id="minutes">00</span>
+<p>Minutes</p>
+</div>
+
+<div class="time-box fade">
+<span id="seconds">00</span>
+<p>Secondes</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
 
 
-
-<section class="histoire-section fade">
-    <h2 class="histoire-title fade">Notre Histoire</h2>
-    <div class="histoire-box fade">
+<section class="histoire-section">
+    <h2 class="histoire-title fade-light">Notre Histoire</h2>
+    <div class="histoire-box fade-light">
         <p>
         Depuis notre rencontre, chaque instant partagé a été un chapitre unique de notre histoire. 
         Des premiers regards aux éclats de rire, des aventures aux moments de tendresse, 
@@ -121,7 +131,6 @@ VOUS ÊTES CORDIALEMENT INVITÉS AU MARIAGE DE
         </p>
     </div>
 </section>
-
 
 
 <section class="galerie-section fade">
@@ -228,22 +237,21 @@ Voir sur Google Maps
 
 <section class="galerie-complete">
 
-<p class="galerie-subtitle">NOS PHOTOS</p>
-<h2 class="galerie-title">Galerie Complète</h2>
+<p class="galerie-subtitle fade-light">NOS PHOTOS</p>
+<h2 class="galerie-title fade-light">Galerie Complète</h2>
 
 <div class="galerie-container">
 
-<img src="images/7.jpeg" alt="">
-<img src="images/6.jpeg" alt="">
-<img src="images/2.jpeg" alt="">
-<img src="images/3.jpeg" alt="">
-<img src="images/4.jpeg" alt="">
-<img src="images/5.jpeg" alt="">
+<img src="images/7.jpeg" class="fade-light" alt="">
+<img src="images/6.jpeg" class="fade-light" alt="">
+<img src="images/2.jpeg" class="fade-light" alt="">
+<img src="images/3.jpeg" class="fade-light" alt="">
+<img src="images/4.jpeg" class="fade-light" alt="">
+<img src="images/5.jpeg" class="fade-light" alt="">
 
 </div>
 
 </section>
-
 
 
 <section class="citation-section">
@@ -304,33 +312,52 @@ document.getElementById("invitation").style.display = "block";
 
 
     <script>
-    // Date du mariage (année, mois-1, jour, heure, minute, seconde)
-    const weddingDate = new Date("2026-03-29T15:17:00").getTime();
 
-    const countdown = setInterval(() => {
-        const now = new Date().getTime();
-        const distance = weddingDate - now;
+const weddingDate = new Date("2026-03-29T15:17:00").getTime();
 
-        if (distance < 0) {
-        clearInterval(countdown);
-        document.querySelector(".countdown").innerHTML = "<h2>C'est le grand jour ! 🎉</h2>";
-        return;
-        }
+const countdown = setInterval(() => {
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+const now = new Date().getTime();
+const distance = weddingDate - now;
 
-        document.getElementById("days").innerText = days.toString().padStart(2, "0");
-        document.getElementById("hours").innerText = hours.toString().padStart(2, "0");
-        document.getElementById("minutes").innerText = minutes.toString().padStart(2, "0");
-        document.getElementById("seconds").innerText = seconds.toString().padStart(2, "0");
-    }, 1000);
-    </script>
+if(distance < 0){
+clearInterval(countdown);
+document.querySelector(".countdown").innerHTML = "<h2>C'est le grand jour ! 🎉</h2>";
+return;
+}
+
+const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+updateNumber("days", days);
+updateNumber("hours", hours);
+updateNumber("minutes", minutes);
+updateNumber("seconds", seconds);
+
+},1000);
 
 
+function updateNumber(id,value){
 
+const el = document.getElementById(id);
+
+if(el.innerText != value){
+
+el.classList.add("animate");
+
+setTimeout(()=>{
+el.classList.remove("animate");
+},300);
+
+}
+
+el.innerText = value.toString().padStart(2,"0");
+
+}
+
+</script>
 <script>
 const track = document.querySelector(".slider-track");
 const dots = document.querySelectorAll(".dot");
@@ -391,6 +418,48 @@ element.classList.add("active");
 });
 
 </script>
+
+
+<script>
+window.addEventListener("scroll", function() {
+    const elements = document.querySelectorAll(".fade-light");
+
+    elements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        const revealPoint = 100; // déclenche 100px avant que l’élément entre
+
+        if (elementTop < windowHeight - revealPoint) {
+            el.classList.add("active");
+        }
+    });
+});
+</script>
+
+
+
+<script>
+
+window.addEventListener("scroll", function(){
+
+let elements = document.querySelectorAll(".fade-light");
+
+elements.forEach(function(el){
+
+let windowHeight = window.innerHeight;
+let elementTop = el.getBoundingClientRect().top;
+let visible = 100;
+
+if(elementTop < windowHeight - visible){
+el.classList.add("active");
+}
+
+});
+
+});
+
+</script>
+
 
 
 
