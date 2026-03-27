@@ -1,469 +1,389 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>Mansour & Arame</title>
+    <title>Mansour & Arame</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@300;500&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-</head>
+  <body>
+    <!-- MUSIQUE -->
+    <audio id="musique" loop>
+      <source src="audio/Amflo_Validé.mp3" type="audio/mpeg" />
+    </audio>
 
-<body>
-    
-
-
-
-<!-- MUSIQUE -->
-<audio id="musique" loop>
-    <source src="audio/Amflo_Validé.mp3" type="audio/mpeg">
-</audio>
-
-<!-- PAGE ACCUEIL -->
-<div id="accueil" style="background-image: url('/images/1.jpeg');
-    background-size:cover;
-    background-position:center;
-    min-height: 90vh;
-    position:relative;
-    justify-content: flex-start;">
-
-    <div class="overlay2">
-
+    <!-- PAGE ACCUEIL -->
+    <div
+      id="accueil"
+      style="
+        background-image: url(&quot;/images/1.jpeg&quot;);
+        background-size: cover;
+        background-position: center;
+        min-height: 90vh;
+        position: relative;
+        justify-content: flex-start;
+      "
+    >
+      <div class="overlay2">
         <h2 class="arabic fade">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h2>
 
-        <p class="invite fade">
-        VOUS ÊTES CORDIALEMENT INVITÉS AU MARIAGE DE
-        </p>
+        <p class="invite fade">VOUS ÊTES CORDIALEMENT INVITÉS AU MARIAGE DE</p>
 
-        <h1 class="nom2 fade">Mansour</h1> 
-        <h3 class="et2 fade">&</h3> 
+        <h1 class="nom2 fade">Mansour</h1>
+        <h3 class="et2 fade">&</h3>
         <h1 class="nom2 fade">Arame</h1>
 
         <button onclick="ouvrirInvitation()" class="btn-invitation">
-            Cliquer pour ouvrir l'invitation
+          Cliquer pour ouvrir l'invitation
         </button>
-
-
+      </div>
     </div>
-</div>
 
+    <div id="invitation" style="display: none">
+      <div class="acceuil">
+        <div class="overlay">
+          <h2 class="arabic fade">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h2>
 
-<div id="invitation" style="display:none;">
+          <p class="verset fade">
+            30 : 21 <br />
+            Et parmi Ses signes Il a créé de vous, pour vous, des épouses pour
+            que vous viviez en tranquillité avec elles <br />
+            et Il a mis entre vous de l'affection et de la bonté.
+          </p>
 
-<div class="acceuil">
+          <div class="separateur fade">
+            <span></span>
+          </div>
 
-<div class="overlay">
+          <p class="invite fade">
+            VOUS ÊTES CORDIALEMENT INVITÉS AU MARIAGE DE
+          </p>
 
-<h2 class="arabic fade">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h2>
+          <h1 class="nom fade">Mansour</h1>
+          <h3 class="et fade">&</h3>
+          <h1 class="nom fade">Arame</h1>
+        </div>
+      </div>
 
-<p class="verset fade">
-30 : 21 <br>
-Et parmi Ses signes Il a créé de vous, pour vous, des épouses
-pour que vous viviez en tranquillité avec elles <br>
-et Il a mis entre vous de l'affection et de la bonté.
-</p>
+      <section class="countdown-section fade">
+        <h2 class="countdown-title fade">Le grand jour approche !</h2>
 
-<div class="separateur fade">
-    <span></span>
-</div>
+        <div class="countdown fade">
+          <div class="countdown-row">
+            <div class="time-box fade">
+              <span id="days">00</span>
+              <p>Jours</p>
+            </div>
 
-<p class="invite fade">
-VOUS ÊTES CORDIALEMENT INVITÉS AU MARIAGE DE
-</p>
+            <div class="time-box fade">
+              <span id="hours">00</span>
+              <p>Heures</p>
+            </div>
+          </div>
 
-<h1 class="nom fade">Mansour</h1> 
-<h3 class="et fade">&</h3> 
-<h1 class="nom fade">Arame</h1>
-</div>
+          <div class="countdown-row">
+            <div class="time-box fade">
+              <span id="minutes">00</span>
+              <p>Minutes</p>
+            </div>
 
-</div>
+            <div class="time-box fade">
+              <span id="seconds">00</span>
+              <p>Secondes</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <section class="histoire-section">
+        <h2 class="histoire-title fade-light">Notre Histoire</h2>
+        <div class="histoire-box fade-light">
+          <p>
+            Depuis notre rencontre, chaque instant partagé a été un chapitre
+            unique de notre histoire. Des premiers regards aux éclats de rire,
+            des aventures aux moments de tendresse, notre chemin nous a guidés
+            vers ce jour spécial où nous célébrons notre amour entourés de nos
+            proches.
+          </p>
+        </div>
+      </section>
 
-<section class="countdown-section fade">
-<h2 class="countdown-title fade">Le grand jour approche !</h2>
-
-<div class="countdown fade">
-
-<div class="countdown-row">
-
-<div class="time-box fade">
-<span id="days">00</span>
-<p>Jours</p>
-</div>
-
-<div class="time-box fade">
-<span id="hours">00</span>
-<p>Heures</p>
-</div>
-
-</div>
-
-<div class="countdown-row">
-
-<div class="time-box fade">
-<span id="minutes">00</span>
-<p>Minutes</p>
-</div>
-
-<div class="time-box fade">
-<span id="seconds">00</span>
-<p>Secondes</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="histoire-section">
-    <h2 class="histoire-title fade-light">Notre Histoire</h2>
-    <div class="histoire-box fade-light">
-        <p>
-        Depuis notre rencontre, chaque instant partagé a été un chapitre unique de notre histoire. 
-        Des premiers regards aux éclats de rire, des aventures aux moments de tendresse, 
-        notre chemin nous a guidés vers ce jour spécial où nous célébrons notre amour entourés de nos proches.
-        </p>
-    </div>
-</section>
-
-
-<section class="galerie-section fade">
-    <p>NOS MOMENTS</p>
-    <h2 class="galerie-title fade">Galerie Photo</h2>
-    <div class="galerie-box fade">
-        <div class="slider-container">
+      <section class="galerie-section fade">
+        <p>NOS MOMENTS</p>
+        <h2 class="galerie-title fade">Galerie Photo</h2>
+        <div class="galerie-box fade">
+          <div class="slider-container">
             <div class="slider-track">
-                <img src="/images/2.jpeg" alt="Photo 1">
-                <img src="/images/3.jpeg" alt="Photo 2">
-                <img src="/images/4.jpeg" alt="Photo 3">
-                <img src="/images/5.jpeg" alt="Photo 4">
+              <img src="/images/2.jpeg" alt="Photo 1" />
+              <img src="/images/3.jpeg" alt="Photo 2" />
+              <img src="/images/4.jpeg" alt="Photo 3" />
+              <img src="/images/5.jpeg" alt="Photo 4" />
             </div>
 
             <div class="slider-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
             </div>
+          </div>
         </div>
+      </section>
+
+      <section class="info-section">
+        <h2 class="info-subtitle">INFORMATIONS PRATIQUES</h2>
+        <h1 class="info-title">Les Détails du Grand Jour</h1>
+
+        <div class="info-container">
+          <div class="info-card reveal">
+            <div class="icon">🕌</div>
+
+            <h3>CÉRÉMONIE RELIGIEUSE</h3>
+
+            <p class="lieu">Mosquée MAKA NDIAYE</p>
+            <p class="detail">KAHONE</p>
+            <p class="detail">17h00</p>
+          </div>
+
+          <div class="info-card reveal">
+            <div class="icon">📅</div>
+
+            <h3>DATE</h3>
+
+            <p class="lieu">Samedi 29 Mars 2026</p>
+            <p class="detail">29 Chawwal 1447 H</p>
+          </div>
+
+          <div class="info-card reveal">
+            <div class="icon">🎉</div>
+
+            <h3>RÉCEPTION</h3>
+
+            <p class="lieu">Maka Ndiaye KAHONE</p>
+            <p class="detail">KAOLACK</p>
+
+            <a href="https://maps.app.goo.gl/hZXP9H7upYJz9VWe9" class="map-btn"
+              >Voir la localisation</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="lieu-section">
+        <p class="lieu-subtitle">LIEU DU MARIAGE</p>
+        <h2 class="lieu-title">Nous Retrouver</h2>
+
+        <div class="lieu-container">
+          <div class="lieu-info">
+            <h3>Réception</h3>
+
+            <a
+              href="https://maps.app.goo.gl/hZXP9H7upYJz9VWe9"
+              target="_blank"
+              class="map-btn"
+            >
+              Voir sur Google Maps
+            </a>
+          </div>
+
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3868.4327501096946!2d-16.03759904!3d14.16941337!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xee997f1917823a9%3A0x5c89addcaafab1e5!2smosquee%20de%20maka%20ndiaye!5e0!3m2!1sfr!2ssn!4v1773589030623!5m2!1sfr!2ssn"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="galerie-complete">
+        <p class="galerie-subtitle fade-light">NOS PHOTOS</p>
+        <h2 class="galerie-title fade-light">Galerie Complète</h2>
+
+        <div class="galerie-container">
+          <img src="images/7.jpeg" class="fade-light" alt="" />
+          <img src="images/6.jpeg" class="fade-light" alt="" />
+          <img src="images/2.jpeg" class="fade-light" alt="" />
+          <img src="images/3.jpeg" class="fade-light" alt="" />
+          <img src="images/4.jpeg" class="fade-light" alt="" />
+          <img src="images/5.jpeg" class="fade-light" alt="" />
+        </div>
+      </section>
+
+      <section class="citation-section">
+        <div class="citation-box">
+          <p class="citation-texte">
+            "L'amour n'est pas seulement un sentiment, c'est une promesse de
+            marcher ensemble, main dans la main, pour toute une vie."
+          </p>
+
+          <span class="citation-auteur">— Mansour & Arame</span>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-content">
+          <h2 class="footer-noms">Mansour & Arame</h2>
+
+          <p class="footer-texte">
+            Merci de partager avec nous ce moment unique de notre vie.
+          </p>
+
+          <div class="footer-separateur"></div>
+
+          <p class="footer-date">29 Mars 2026 • kaolack</p>
+        </div>
+      </footer>
     </div>
-</section>
-
-<section class="info-section">
-
-<h2 class="info-subtitle">INFORMATIONS PRATIQUES</h2>
-<h1 class="info-title">Les Détails du Grand Jour</h1>
-
-<div class="info-container">
-
-<div class="info-card reveal">
-<div class="icon">🕌</div>
-
-<h3>CÉRÉMONIE RELIGIEUSE</h3>
-
-<p class="lieu">Mosquée MAKA NDIAYE</p>
-<p class="detail">KAHONE</p>
-<p class="detail">17h00</p>
-
-</div>
-
-
-<div class="info-card reveal">
-<div class="icon">📅</div>
-
-<h3>DATE</h3>
-
-<p class="lieu">Samedi 29 Mars 2026</p>
-<p class="detail">29 Ramadan 1447 H</p>
-
-</div>
-
-
-<div class="info-card reveal">
-
-<div class="icon">🎉</div>
-
-<h3>RÉCEPTION</h3>
-
-<p class="lieu">Maka Ndiaye KAHONE</p>
-<p class="detail">KAOLACK</p>
-
-<a href="https://maps.app.goo.gl/hZXP9H7upYJz9VWe9" class="map-btn">Voir la localisation</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<section class="lieu-section">
-
-<p class="lieu-subtitle">LIEU DU MARIAGE</p>
-<h2 class="lieu-title">Nous Retrouver</h2>
-
-<div class="lieu-container">
-
-<div class="lieu-info">
-
-<h3>Réception</h3>
-
-
-
-<a href="https://maps.app.goo.gl/hZXP9H7upYJz9VWe9" target="_blank" class="map-btn">
-Voir sur Google Maps
-</a>
-
-</div>
-
-<div class="map-container">
-
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3868.4327501096946!2d-16.03759904!3d14.16941337!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xee997f1917823a9%3A0x5c89addcaafab1e5!2smosquee%20de%20maka%20ndiaye!5e0!3m2!1sfr!2ssn!4v1773589030623!5m2!1sfr!2ssn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<section class="galerie-complete">
-
-<p class="galerie-subtitle fade-light">NOS PHOTOS</p>
-<h2 class="galerie-title fade-light">Galerie Complète</h2>
-
-<div class="galerie-container">
-
-<img src="images/7.jpeg" class="fade-light" alt="">
-<img src="images/6.jpeg" class="fade-light" alt="">
-<img src="images/2.jpeg" class="fade-light" alt="">
-<img src="images/3.jpeg" class="fade-light" alt="">
-<img src="images/4.jpeg" class="fade-light" alt="">
-<img src="images/5.jpeg" class="fade-light" alt="">
-
-</div>
-
-</section>
-
-
-<section class="citation-section">
-
-<div class="citation-box">
-
-<p class="citation-texte">
-"L'amour n'est pas seulement un sentiment,
-c'est une promesse de marcher ensemble,
-main dans la main, pour toute une vie."
-</p>
-
-<span class="citation-auteur">— Mansour & Arame</span>
-
-</div>
-
-</section>
-
-
-<footer class="footer">
-
-<div class="footer-content">
-
-<h2 class="footer-noms">Mansour & Arame</h2>
-
-<p class="footer-texte">
-Merci de partager avec nous ce moment unique de notre vie.
-</p>
-
-<div class="footer-separateur"></div>
-
-<p class="footer-date">
-29 Mars 2026 • kaolack
-</p>
-
-</div>
-
-</footer>
-
-</div>
-
-
-<script>
-
-function ouvrirInvitation(){
-
-const audio = document.getElementById("musique");
-
-audio.play();
-
-document.getElementById("accueil").style.display = "none";
-
-document.getElementById("invitation").style.display = "block";
-
-}
-
-</script>
-
 
     <script>
+      function ouvrirInvitation() {
+        const audio = document.getElementById("musique");
 
-const weddingDate = new Date("2026-03-29T15:17:00").getTime();
+        audio.play();
 
-const countdown = setInterval(() => {
+        document.getElementById("accueil").style.display = "none";
 
-const now = new Date().getTime();
-const distance = weddingDate - now;
+        document.getElementById("invitation").style.display = "block";
+      }
+    </script>
 
-if(distance < 0){
-clearInterval(countdown);
-document.querySelector(".countdown").innerHTML = "<h2>C'est le grand jour ! 🎉</h2>";
-return;
-}
+    <script>
+      const weddingDate = new Date("2026-03-29T15:17:00").getTime();
 
-const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      const countdown = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
 
-updateNumber("days", days);
-updateNumber("hours", hours);
-updateNumber("minutes", minutes);
-updateNumber("seconds", seconds);
+        if (distance < 0) {
+          clearInterval(countdown);
+          document.querySelector(".countdown").innerHTML =
+            "<h2>C'est le grand jour ! 🎉</h2>";
+          return;
+        }
 
-},1000);
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+        updateNumber("days", days);
+        updateNumber("hours", hours);
+        updateNumber("minutes", minutes);
+        updateNumber("seconds", seconds);
+      }, 1000);
 
-function updateNumber(id,value){
+      function updateNumber(id, value) {
+        const el = document.getElementById(id);
 
-const el = document.getElementById(id);
+        if (el.innerText != value) {
+          el.classList.add("animate");
 
-if(el.innerText != value){
+          setTimeout(() => {
+            el.classList.remove("animate");
+          }, 300);
+        }
 
-el.classList.add("animate");
+        el.innerText = value.toString().padStart(2, "0");
+      }
+    </script>
+    <script>
+      const track = document.querySelector(".slider-track");
+      const dots = document.querySelectorAll(".dot");
+      let currentIndex = 0;
+      const totalImages = track.children.length;
 
-setTimeout(()=>{
-el.classList.remove("animate");
-},300);
+      function showSlide(index) {
+        const containerWidth =
+          document.querySelector(".slider-container").offsetWidth;
+        track.style.transform = `translateX(-${index * containerWidth}px)`; // défilement exact
+        dots.forEach((dot) => dot.classList.remove("active"));
+        dots[index].classList.add("active");
+      }
 
-}
-
-el.innerText = value.toString().padStart(2,"0");
-
-}
-
-</script>
-<script>
-const track = document.querySelector(".slider-track");
-const dots = document.querySelectorAll(".dot");
-let currentIndex = 0;
-const totalImages = track.children.length;
-
-function showSlide(index) {
-    const containerWidth = document.querySelector(".slider-container").offsetWidth;
-    track.style.transform = `translateX(-${index * containerWidth}px)`; // défilement exact
-    dots.forEach(dot => dot.classList.remove("active"));
-    dots[index].classList.add("active");
-}
-
-// Automatique
-let slideInterval = setInterval(() => {
-    currentIndex = (currentIndex + 1) % totalImages;
-    showSlide(currentIndex);
-}, 4000);
-
-// Navigation via points
-dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
-        currentIndex = i;
+      // Automatique
+      let slideInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalImages;
         showSlide(currentIndex);
-        clearInterval(slideInterval);
-        slideInterval = setInterval(() => {
+      }, 4000);
+
+      // Navigation via points
+      dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+          currentIndex = i;
+          showSlide(currentIndex);
+          clearInterval(slideInterval);
+          slideInterval = setInterval(() => {
             currentIndex = (currentIndex + 1) % totalImages;
             showSlide(currentIndex);
-        }, 4000);
-    });
-});
-</script>
-    
+          }, 4000);
+        });
+      });
+    </script>
 
+    <script>
+      window.addEventListener("scroll", function () {
+        let reveals = document.querySelectorAll(".reveal");
 
-<script>
+        reveals.forEach(function (element) {
+          let windowHeight = window.innerHeight;
 
-window.addEventListener("scroll", function(){
+          let elementTop = element.getBoundingClientRect().top;
 
-let reveals = document.querySelectorAll(".reveal");
+          let visible = 100;
 
-reveals.forEach(function(element){
+          if (elementTop < windowHeight - visible) {
+            element.classList.add("active");
+          }
+        });
+      });
+    </script>
 
-let windowHeight = window.innerHeight;
+    <script>
+      window.addEventListener("scroll", function () {
+        const elements = document.querySelectorAll(".fade-light");
 
-let elementTop = element.getBoundingClientRect().top;
+        elements.forEach((el) => {
+          const elementTop = el.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          const revealPoint = 100; // déclenche 100px avant que l’élément entre
 
-let visible = 100;
-
-if(elementTop < windowHeight - visible){
-
-element.classList.add("active");
-
-}
-
-});
-
-});
-
-</script>
-
-
-<script>
-window.addEventListener("scroll", function() {
-    const elements = document.querySelectorAll(".fade-light");
-
-    elements.forEach(el => {
-        const elementTop = el.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        const revealPoint = 100; // déclenche 100px avant que l’élément entre
-
-        if (elementTop < windowHeight - revealPoint) {
+          if (elementTop < windowHeight - revealPoint) {
             el.classList.add("active");
-        }
-    });
-});
-</script>
+          }
+        });
+      });
+    </script>
 
+    <script>
+      window.addEventListener("scroll", function () {
+        let elements = document.querySelectorAll(".fade-light");
 
+        elements.forEach(function (el) {
+          let windowHeight = window.innerHeight;
+          let elementTop = el.getBoundingClientRect().top;
+          let visible = 100;
 
-<script>
-
-window.addEventListener("scroll", function(){
-
-let elements = document.querySelectorAll(".fade-light");
-
-elements.forEach(function(el){
-
-let windowHeight = window.innerHeight;
-let elementTop = el.getBoundingClientRect().top;
-let visible = 100;
-
-if(elementTop < windowHeight - visible){
-el.classList.add("active");
-}
-
-});
-
-});
-
-</script>
-
-
-
-
-
-
-</body>
+          if (elementTop < windowHeight - visible) {
+            el.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
